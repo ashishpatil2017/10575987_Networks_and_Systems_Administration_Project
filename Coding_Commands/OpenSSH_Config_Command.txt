@@ -1,0 +1,30 @@
+********************Configure SSH in router************************************* 
+
+
+->enable 
+->config t
+
+->hostname r1
+->crypto key generate rsa
+->1024
+
+->line vty 0 15
+->login local 
+->transport input ?
+->transport input ssh 
+
+->copy running-config startup-config (in the outside command prompt that is after two exits)
+
+->enable secret class (do this in config prompt)
+->line console 0 
+->password cisco 
+->login 
+->exit 
+
+
+
+
+
+
+
+
